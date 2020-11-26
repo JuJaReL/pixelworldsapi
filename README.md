@@ -5,11 +5,11 @@
     🌎 A python wrapper for pixel worlds' data
 </p>
 <p align="center">
-    <a href="#">About</a> |
-    <a href="#">Installation</a> |
-    <a href="#">Usage</a> |
-    <a href="#">Author</a> |
-    <a href="#">License</a> |
+    <a href="#about">About</a> |
+    <a href="#installation">Installation</a> |
+    <a href="#usage">Usage</a> |
+    <a href="#author">Author</a> |
+    <a href="#license">License</a> |
 </p>
 
 ## About
