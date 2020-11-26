@@ -62,12 +62,12 @@ print(item.get_data()) # Get all data in a json format
 # {
 #    "name": "Soil Block",
 #    "description": "This is what natural ground is made of. Most common block of them all.",    
-#    "complexity": "Complexity: 1",
-#    "tier": "Tier 1",
+#    "complexity": "1",
+#    "tier": "1",
 #    "rarity": "Common",
 #    "itemType": "Blocks",
 #    "farmable": "Farmable",
-#    "growthTime": "Growth Time: 31s",
+#    "growthTime": "31s",
 #    "crossbreedable": "non-crossbreedable"
 # }
 
