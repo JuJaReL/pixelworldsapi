@@ -51,7 +51,6 @@ item = Item("soil block")
 # get_item_type() -> Get item type 
 # get_farmable_info() -> Get farmable info
 # get_growth_time() -> Get growth time
-# get_crossbreedable_info() ->  Get crossbreedable info
 # get_data() -> Get all data in a dict for
 
 
@@ -68,7 +67,6 @@ print(item.get_data()) # Get all data in a json format
 #    "itemType": "Blocks",
 #    "farmable": "Farmable",
 #    "growthTime": "31s",
-#    "crossbreedable": "non-crossbreedable"
 # }
 
 print(item.get_description()) # Get description info
