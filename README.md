@@ -52,6 +52,7 @@ item = Item("soil block")
 # get_farmable_info() -> Get farmable info
 # get_growth_time() -> Get growth time
 # get_data() -> Get all data in a dict for
+# get_recipe () -> Get recipe
 
 
 print(item.get_data()) # Get all data in a json format
@@ -67,6 +68,7 @@ print(item.get_data()) # Get all data in a json format
 #    "itemType": "Blocks",
 #    "farmable": "Farmable",
 #    "growthTime": "31s",
+#    "recipe": None
 # }
 
 print(item.get_description()) # Get description info
@@ -74,13 +76,12 @@ print(item.get_description()) # Get description info
 # This is what natural ground is made of. Most common block of them all.
 
 
-
 ```
+
 
 ---
 
-- Search for recipes
-  
+- Wearables
 
 ```python
 # On going
@@ -89,8 +90,9 @@ print(item.get_description()) # Get description info
 ---
 
 - Search for events
-  
-
+```python
+# On going
+```
 ---
 
 ## Author
