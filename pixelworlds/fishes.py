@@ -33,7 +33,6 @@ for data in soup.find_all("div", {"class": "lightbox-caption"}):
     for sizes in FISHES_SIZE:
         AVAILABLEFISHES.append(data.text + sizes)
 
-
 class Fishes(object):
     def __init__(self, fish: str=None):
         if fish == None:
@@ -50,7 +49,6 @@ class Fishes(object):
         self.baseurl = "https://pixelworlds.fandom.com/wiki/{}".format(self.fish)
         self.scrape()
         
-
 
     def tokenize(self):
         if self.fish != None:
