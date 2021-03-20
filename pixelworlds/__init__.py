@@ -15,4 +15,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-from .items import Item, Recipe
+from .items import Items
+from .fishes import Fishes
+from .image import PixelWorldsImage
+from .errors import InternalError
