@@ -1,5 +1,5 @@
 
-#           Copyright (C) 2020  Zenqi. All rights reserved
+#    Copyright (C) 2020  Zenqi. All rights reserved
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -12,15 +12,16 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
 from bs4 import BeautifulSoup
+from .errors import InternalError
 import requests
 import json
 
 
-class Item(object):
+class Items(object):
     def __init__(self, item: str=None):
         if item == None:
             print("Please specify item")
@@ -30,7 +31,7 @@ class Item(object):
         self.baseurl = "https://pixelworlds.fandom.com/wiki/{}".format(self.item)
         self.scrape()
         
-        
+
 
     def tokenize(self):
         _items = self.item.split(" ")
@@ -42,6 +43,13 @@ class Item(object):
         session = requests.Session()
         self.content = session.get(url=self.baseurl).text
         self.soup = BeautifulSoup(self.content, "html.parser")
+
+    def get_title(self):
+        try:
+            title = self.soup.find("h1", {"class": "page-header__title"})
+        except Exception:
+            raise InternalError("%s not found. Try being specific in terms of items?" %(self.item))
+        return title.text
 
     def get_image(self):
         images = self.soup.find_all("img", alt=True)    
@@ -87,6 +95,16 @@ class Item(object):
         return growthtime.text.split(": ")[1]
 
 
+    def get_recipe(self):
+        _ = self.soup.find("td", {"class": "crossbreedable"})
+        __ = _.text
+        if __ != "non-crossbreedable":
+            return __.replace('\u200b', '')
+        
+        else:
+            return None
+        
+
     def get_data(self):
         self.data["name"] = self.item
         self.data["image"] = self.get_image()
@@ -97,13 +115,9 @@ class Item(object):
         self.data["itemType"] = self.get_item_type()
         self.data["isFarmable"] = self.get_farmable_info()
         self.data["growthTime"] = self.get_growth_time()
+        self.data["recipe"] = self.get_recipe()
 
 
         
         return self.data
-
-class Recipe(object):
-    def __init__(self, item: str=None):
-        if item == None:
-            print("Please specify item")
 
