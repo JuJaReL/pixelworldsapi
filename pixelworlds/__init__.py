@@ -19,3 +19,10 @@ from .items import Items
 from .fishes import Fishes
 from .image import PixelWorldsImage
 from .errors import InternalError
+
+
+__title__ = "Pixelworlds"
+__version__ = "0.1.0"
+__copyright__ = "Copyright (c) 2020, Zenqi. All rights reserved."
+__liscense__ = "MIT"
+__author__ = "Zenqi"
