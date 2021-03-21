@@ -24,5 +24,5 @@ from .errors import InternalError
 __title__ = "Pixelworlds"
 __version__ = "0.1.0"
 __copyright__ = "Copyright (c) 2020, Zenqi. All rights reserved."
-__liscense__ = "MIT"
+__license__ = "MIT"
 __author__ = "Zenqi"
